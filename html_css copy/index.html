@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML and CSS Collage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;} 
+
+        #container {            
+            width: 100%;
+            height: 100vh;
+            background-image: url("media/train.png");
+            opacity: 0.8;
+            background-size: cover;
+            background-position: center;
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            grid-template-rows: repeat(4, 25%);
+            
+        }
+
+        .crystal {
+            grid-column: 1 / 5;
+            grid-row: 1 / 5;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;            
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+        }
+
+        .snow {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+        .animation {
+            position: absolute;
+            width: 100px;
+            bottom:30px;
+            left: 50px;
+            z-index: 100;
+            transition: transform 0.3s ease-in;
+            transform-origin: bottom left;
+        }
+
+        .animation:hover{
+            transform: scale3d(2,2,2)
+        }
+
+        audio {
+            position: absolute;
+            bottom:0;
+            right: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img class="crystal" src="media/crystal.jpg">
+        <img class="snow" src="media/snow.gif">
+        <a href="../index.html"><img class="animation" src="media/texting.gif"></a>
+    </div>
+
+    <audio autoplay controls loop> 
+        <source src="media/audio.ogg" type="audio/ogg">
+        <source src="media/audio.mp3" type="audio/mpeg">
+    </audio>
+    
+</body>
+</html>
